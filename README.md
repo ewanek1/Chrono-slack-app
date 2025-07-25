@@ -13,8 +13,8 @@ Chrono is a Slack app that helps teams coordinate across time zones. It provides
   Converts a time between two time zones. Inputs are not case sensitive.
 
 - **`/timefor @user`**  
-  Example: `/timefor @user`  
-  Converts a time (assumed to be in your current time in your local timezone) into the target user’s time zone.
+  Example: `/time @user`  
+  Converts a time (assumed to be your current time in your local timezone) into the target user’s time zone.
 
 - **`/teamclock` or `/teamclock @usergroup`**  
   Displays the current time for each member in the channel or user group. Indicates general availability (e.g. before 9 AM = unavailable).

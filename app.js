@@ -16,7 +16,6 @@ const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   socketMode: true,
   appToken: process.env.SLACK_APP_TOKEN,
-  //logLevel: LogLevel
 });
 
 // Handle app_mention events
@@ -36,5 +35,5 @@ app.function("Userconv", handleUserConversionWF);
 // Start Bolt app
 (async () => {
   await app.start();
-  console.log("⚡️ Bolt app is running!");
+  app.logger.info("⚡️ Bolt app is running!");
 })();

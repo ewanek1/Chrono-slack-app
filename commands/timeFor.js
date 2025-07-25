@@ -1,6 +1,5 @@
 const { WebClient } = require("@slack/web-api");
 const { convertTimeBetweenUsers } = require("./timeForLogic.js"); 
-const client = new WebClient(process.env.SLACK_BOT_TOKEN);
 
 /* The `timeForCommandText` function converts a given time
  * in the sender's timezone to the target user's timezone.
@@ -13,7 +12,7 @@ async function timeForCommandText(text, senderId) {
   if (parts.length !== 1) {
     return {
       error:
-        "Invalid input format. Please use the `/time_for @user`\nExample: `/time_for @username`",
+        "Invalid input format. Please use the `/timefor @user`\nExample: `/timefor @user`",
     };
   }
 

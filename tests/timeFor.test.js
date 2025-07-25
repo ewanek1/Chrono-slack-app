@@ -11,7 +11,7 @@ beforeEach(() => {
   WebClient.mockClear();
 });
 
-describe("/time_for command", () => {
+describe("/timefor command", () => {
   test("returns error for invalid user mention format", async () => {
     WebClient.mockImplementation(() => ({
       users: {
@@ -61,7 +61,7 @@ describe("/time_for command", () => {
     });
 
     expect(respond).toHaveBeenCalledWith({
-      text: "Invalid input format. Please use the `/time_for <time> @user`\nExample: `/time_for 3PM @username`",
+      text: "Invalid user format. Please mention a user like @username.`",
     });
   });
 

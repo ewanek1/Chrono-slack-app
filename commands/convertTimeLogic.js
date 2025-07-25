@@ -4,7 +4,7 @@
  */
 
 const moment = require("moment-timezone");  // Plugin for Moment.js library
-const { tzMap, TIME_FORMATS } = require("../utils/timeZoneMap.js");
+const { tzMap, TIME_FORMATS } = require("../utils/constants.js");
 
 /* The `convertTimeCommandText` function parses 
  * and converts a time between time zones 
@@ -38,7 +38,9 @@ function convertTimeCommandText(text) {
     return {
       error: `Sorry, I don't recognize the time zone abbreviation ${fromZoneAbbr}`,
     };
-  } else if (!toZone) {
+  }
+
+  if (!toZone) {
     return {
       error: `Sorry, I don't recognize the time zone abbreviation ${toZoneAbbr}`,
     };
@@ -66,7 +68,7 @@ function convertTimeCommandText(text) {
   const output_message = `${naiveTime.format("h:mm a")} ${fromZoneAbbr.toUpperCase()} ➡️ ${converted.format(
     "h:mm a"
   )} ${toZoneAbbr.toUpperCase()}`;
-  
+
   return { result: output_message }; 
 }
 

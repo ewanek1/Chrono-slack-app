@@ -8,11 +8,10 @@
 const moment = require("moment-timezone");
 
 const timeRanges = [
-  { start: "09:00", end: "16:00", message: "Available ✅" },
-  { start: "16:00", end: "17:00", message: "Getting late 🕓" },
-  { start: "17:00", end: "20:00", message: "After hours 🌙" },
-  { start: "20:00", end: "24:00", message: "After hours 🌙" },
-  { start: "00:00", end: "09:00", message: "Sleeping 😴" },
+   { start: "00:00", message: "Sleeping 😴" },
+   { start: "09:00", message: "Available ✅" },
+   { start: "16:00", message: "Getting late 🕓" },
+   { start: "17:00", message: "After hours 🌙" },
 ];
 
 /* The `teamClockCommandText` function determines 
@@ -50,7 +49,7 @@ function formatUserAvailabilityMessages(usersData) {
       const status = teamClockCommandText(curTime);
 
       // Format output message line 
-      messages.push(`${user.real_name}: ${curTimeFormatted}  ⇔  ${status}`);
+      messages.push(`<@${user.id}>: ${curTimeFormatted}  ⇔  ${status}`);
     } catch (error) {
       //console.error(`Error processing user ${user.real_name || user.id}:`, error);
       messages.push(`Error getting status for user ${user.real_name || user.id}`);

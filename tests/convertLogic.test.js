@@ -1,5 +1,5 @@
 const { convertTimeCommandText } = require("../commands/convertTimeLogic.js");
-const { tzMap, TIME_FORMATS } = require("../utils/timeZoneMap.js");
+const { tzMap, TIME_FORMATS } = require("../utils/constants.js");
 const moment = require("moment-timezone");
 
 // Mocking moment-timezone to avoid actual time dependency

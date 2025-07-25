@@ -84,5 +84,6 @@ module.exports = async ({ command, ack, respond }) => {
   // Format the user availability messages using their time zones
   const userMessages = formatUserAvailabilityMessages(usersDataForProcessing);
 
-  await respond(userMessages.join("\n"));
+  const message = userMessages.join("\n");
+  await respond(message);
 };
