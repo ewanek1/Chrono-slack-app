@@ -12,9 +12,9 @@ Chrono is a Slack app that helps teams coordinate across time zones. It provides
   Example: `/convert 3pm est pst`  
   Converts a time between two time zones. Inputs are not case sensitive.
 
-- **`/time [time] @user`**  
-  Example: `/time 3pm @user`  
-  Converts a time (assumed to be in your local timezone) into the target user’s time zone.
+- **`/timefor @user`**  
+  Example: `/timefor @user`  
+  Converts a time (assumed to be in your current time in your local timezone) into the target user’s time zone.
 
 - **`/teamclock` or `/teamclock @usergroup`**  
   Displays the current time for each member in the channel or user group. Indicates general availability (e.g. before 9 AM = unavailable).
@@ -46,14 +46,13 @@ Create a `.env` file in the project root directory with the following:
 ```
 SLACK_BOT_TOKEN=your-bot-token
 SLACK_APP_TOKEN=your-app-level-token
-SLACK_SIGNING_SECRET=your-signing-secret
+
 ```
 
 To get these:
 
 - **Bot Token**: Found under **OAuth & Permissions** in the app settings. Copy the "Bot User OAuth Token".
 - **App Token**: Found under **Basic Information > App-Level Tokens**. Create one with `connections:write` scope.
-- **Signing Secret**: Found under **Basic Information**.
 
 ---
 
