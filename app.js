@@ -14,10 +14,9 @@ const {
 // Initializing Bolt app with Socket Mode
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
   socketMode: true,
   appToken: process.env.SLACK_APP_TOKEN,
-  //logLevel: LogLevel. 
+  //logLevel: LogLevel
 });
 
 // Handle app_mention events
