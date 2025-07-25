@@ -1,0 +1,22 @@
+// Import logic file 
+const { convertTimeCommandText } = require("./convertTimeLogic");
+
+const convertCommand = async ({ command, ack, respond, logger }) => {
+  try {
+    await ack();
+    const { error, result } = convertTimeCommandText(command.text);
+
+    if (error) {
+      await respond({ text: error });
+      return; 
+    }
+
+    await respond({ text: result });
+
+  } catch (error) {
+    logger.error('Error handling convert command:', error);
+  }
+};
+
+module.exports = convertCommand;
+
